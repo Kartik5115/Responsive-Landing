@@ -3,55 +3,136 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>StarPet AI – Responsive Landing</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Task 4 – Advanced CSS Layout</title>
+  <style>
+    /* Theme Variables */
+    :root {
+      --bg: #0a0f2c;
+      --primary: #4fc3f7;
+      --secondary: #ffeb3b;
+      --text: #ffffff;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+    }
+
+    /* Hero Grid Layout */
+    .hero {
+      display: grid;
+      grid-template-columns: 1fr;
+      align-items: center;
+      gap: 2rem;
+      padding: 4rem 2rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr 1fr;
+        padding: 6rem 4rem;
+      }
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .hero-text p {
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    .hero-text button {
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 6px;
+      background: var(--primary);
+      color: #000;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hero-text button:hover {
+      background: var(--secondary);
+    }
+
+    /* CSS Illustration (Planet + Orbiting Moon) */
+    .illustration {
+      position: relative;
+      width: 300px;
+      height: 300px;
+      margin: auto;
+    }
+
+    .planet {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--primary), #0d47a1);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 40px var(--primary);
+    }
+
+    .orbit {
+      width: 250px;
+      height: 250px;
+      border: 1px dashed rgba(255,255,255,0.3);
+      border-radius: 50%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .moon {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 30%, var(--secondary), #f57f17);
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: orbit 6s linear infinite;
+    }
+
+    /* Animation */
+    @keyframes orbit {
+      from { transform: rotate(0deg) translateX(125px) rotate(0deg); }
+      to { transform: rotate(360deg) translateX(125px) rotate(-360deg); }
+    }
+
+  </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <h1>StarPet AI</h1>
-      <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#features">Features</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
 
-  <main>
-    <section id="home" class="hero">
-      <h2>Your AI Pet Sitter from Space 🚀</h2>
-      <p>We watch, feed, and entertain your pets using AI and satellites.</p>
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Explore the Future</h1>
+      <p>Welcome to our next-gen platform where AI meets creativity. Built with accessibility, performance, and design craftsmanship at its core.</p>
       <button>Get Started</button>
-    </section>
+    </div>
 
-    <section id="features" class="features">
-      <h2>Why StarPet AI?</h2>
-      <p>We combine AI, love for pets, and space technology to ensure your furry friends are happy even when you’re away.</p>
-    </section>
+    <div class="illustration">
+      <div class="planet"></div>
+      <div class="orbit"></div>
+      <div class="moon"></div>
+    </div>
+  </section>
 
-    <section id="contact" class="contact">
-      <h2>Contact Us</h2>
-      <form id="contactForm" novalidate>
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required aria-required="true">
-
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required aria-required="true">
-
-        <label for="message">Message:</label>
-        <textarea id="message" name="message" required aria-required="true"></textarea>
-
-        <button type="submit">Send Message</button>
-        <p id="formMessage" role="alert"></p>
-      </form>
-    </section>
-  </main>
-
-  <footer>
-    <p>© 2025 StarPet AI. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
