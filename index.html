@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StarPet AI – Responsive Landing</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <nav>
+      <h1>StarPet AI</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#features">Features</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <h2>Your AI Pet Sitter from Space 🚀</h2>
+      <p>We watch, feed, and entertain your pets using AI and satellites.</p>
+      <button>Get Started</button>
+    </section>
+
+    <section id="features" class="features">
+      <h2>Why StarPet AI?</h2>
+      <p>We combine AI, love for pets, and space technology to ensure your furry friends are happy even when you’re away.</p>
+    </section>
+
+    <section id="contact" class="contact">
+      <h2>Contact Us</h2>
+      <form id="contactForm" novalidate>
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required aria-required="true">
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required aria-required="true">
+
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" required aria-required="true"></textarea>
+
+        <button type="submit">Send Message</button>
+        <p id="formMessage" role="alert"></p>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 StarPet AI. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
